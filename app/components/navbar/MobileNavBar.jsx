@@ -32,21 +32,21 @@ const MobileNavBar = () => {
       {isOpen ? (
         <IoCloseOutline
           onClick={() => setIsOpen(false)}
-          className="text-3xl sm:text-4xl"
+          className="text-3xl sm:text-4xl text-primary"
         />
       ) : (
         <HiMenuAlt1
           onClick={() => setIsOpen(true)}
-          className="text-3xl sm:text-4xl"
+          className="text-3xl sm:text-4xl text-primary"
         />
       )}
       <div
-        className={`absolute right-0 top-24  flex flex-col items-center justify-center gap-16 bg-black w-full h-full duration-700 ${
+        className={`absolute right-0 top-24  flex flex-col items-center justify-center gap-16 bg-primary w-full h-full duration-700 ${
           isOpen ? "block" : "hidden"
         }`}
       >
         {links.map((link, idx) => (
-          <Link key={idx} className="text-primary text-3xl" href={link.path}>
+          <Link key={idx} className="text-black text-3xl" href={link.path}>
             {link.title}
           </Link>
         ))}

@@ -1,19 +1,60 @@
+"use client";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import React from "react";
+import { useRef } from "react";
 
+const variants = {
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 2,
+      staggerChildren: 0.1,
+      type: "spring",
+    },
+  },
+  hidden: {
+    x: -500,
+    opacity: 0,
+  },
+  fromRight: {
+    x: 800,
+    transition: {
+      duration: 2,
+      type: "spring",
+    },
+  },
+};
 const About = () => {
+  const ref = useRef();
+  const isInView = useInView(ref);
   return (
-    <div>
+    <motion.div
+      animate={isInView && "show"}
+      initial="hidden"
+      ref={ref}
+      variants={variants}
+    >
       <div className="flex flex-col items-center justify-center">
         {/* text container*/}
         <div className="relative mb-16">
-          <h1 className="text-[80px] lg:text-[200px] text-gray-200 opacity-40">
+          <motion.h1
+            variants={variants}
+            initial="hidden"
+            animate="show"
+            className="text-[80px] lg:text-[200px] text-gray-200 opacity-40"
+          >
             Who we are
-          </h1>
-          <div className="absolute bottom-2 lg:bottom-4 right-0">
-            <h1 className="text-primary text-center text-2xl lg:text-8xl">
+          </motion.h1>
+          <div className="absolute -bottom-1 sm:bottom-2 lg:bottom-4 right-0">
+            <motion.h1
+              variants={variants}
+              initial="fromRight"
+              animate="show"
+              className="text-primary text-center text-5xl lg:text-8xl"
+            >
               Who we are
-            </h1>
+            </motion.h1>
           </div>
         </div>
         {/*  */}
@@ -36,7 +77,7 @@ const About = () => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
