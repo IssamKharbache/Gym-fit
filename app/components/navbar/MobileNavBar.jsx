@@ -27,7 +27,7 @@ const links = [
 const MobileNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="block md:hidden">
+    <div className="">
       {isOpen ? (
         <IoCloseOutline
           onClick={() => setIsOpen(false)}
@@ -41,8 +41,8 @@ const MobileNavBar = () => {
       )}
 
       <div
-        className={`absolute right-0 top-24 flex flex-col items-center justify-center gap-16 bg-black w-full h-full duration-700 ${
-          isOpen ? "mr-0" : "-mr-[100%]"
+        className={`absolute right-0 top-24  flex flex-col items-center justify-center gap-16 bg-black w-full h-full duration-700 ${
+          isOpen ? "block" : "hidden"
         }`}
       >
         {links.map((link, idx) => (
@@ -50,9 +50,6 @@ const MobileNavBar = () => {
             {link.title}
           </Link>
         ))}
-        <button className="block md:hidden bg-primary  py-2 px-6 hover:rounded-2xl hover:opacity-90 duration-300 items-center text-center">
-          Contact
-        </button>
       </div>
     </div>
   );

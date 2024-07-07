@@ -19,18 +19,18 @@ const variants = {
 
 const Hero = () => {
   return (
-    <div className="flex gap-8 ">
+    <div className="flex flex-col md:flex-row gap-8">
       {/* text */}
       <motion.div
         variants={variants}
         animate="animate"
         initial="initial"
-        className="text-white"
+        className="text-white px-8 xl:px-0"
       >
-        <h1 className="text-8xl">EMBRACE THE CHALLENGE,</h1>
-        <h1 className="text-8xl">RISE ABOVE THE REST,</h1>
-        <h1 className="text-8xl">IGNITE YOUR POTENTIAL</h1>
-        <div className="flex justify-end gap-10">
+        <h1 className="text-5xl lg:text-8xl">EMBRACE THE CHALLENGE,</h1>
+        <h1 className="text-5xl lg:text-8xl">RISE ABOVE THE REST,</h1>
+        <h1 className="text-5xl lg:text-8xl">IGNITE YOUR POTENTIAL</h1>
+        <div className="flex justify-center md:justify-end gap-10">
           <button className="bg-primary hover:bg-primary-hover duration-300 px-6 py-2 text-xl text-black mt-8">
             Getting started
           </button>

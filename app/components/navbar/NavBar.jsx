@@ -1,6 +1,9 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import MobileNavBar from "./MobileNavBar";
+import { IoCloseOutline } from "react-icons/io5";
+import { HiMenuAlt1 } from "react-icons/hi";
 
 const links = [
   {
@@ -22,9 +25,11 @@ const links = [
 ];
 
 const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="flex justify-between items-center p-8 text-2xl bg-primary h-24">
       <h1>Logo</h1>
+      {/* dektop navbar */}
       <div className="hidden md:flex gap-8">
         {links.map((link, idx) => (
           <Link
