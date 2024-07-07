@@ -42,7 +42,9 @@ const NavBar = () => {
         ))}
       </div>
       {/* mobile nav */}
-      <MobileNavBar />
+      <div className="block md:hidden">
+        <MobileNavBar />
+      </div>
       <button className="hidden md:block bg-black text-white py-2 px-6 hover:rounded-2xl hover:opacity-90 duration-300 items-center text-center">
         Contact
       </button>

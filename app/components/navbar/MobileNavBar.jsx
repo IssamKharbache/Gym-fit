@@ -28,6 +28,7 @@ const MobileNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="">
+      {/* icons */}
       {isOpen ? (
         <IoCloseOutline
           onClick={() => setIsOpen(false)}
@@ -39,7 +40,6 @@ const MobileNavBar = () => {
           className="text-3xl sm:text-4xl"
         />
       )}
-
       <div
         className={`absolute right-0 top-24  flex flex-col items-center justify-center gap-16 bg-black w-full h-full duration-700 ${
           isOpen ? "block" : "hidden"
