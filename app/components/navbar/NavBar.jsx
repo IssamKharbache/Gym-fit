@@ -29,7 +29,7 @@ const NavBar = () => {
         {links.map((link, idx) => (
           <Link
             key={idx}
-            className="font-semibold  border-black hover:scale-110 duration-300"
+            className=" border-black hover:scale-110 duration-300"
             href={link.path}
           >
             {link.title}
