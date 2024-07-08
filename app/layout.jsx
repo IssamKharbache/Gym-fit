@@ -6,7 +6,7 @@ import Footer from "./components/footer/Footer";
 const oswald = Oswald({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "GYM FIT",
+  title: "FIT GYM",
 };
 
 export default function RootLayout({ children }) {

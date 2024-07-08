@@ -1,6 +1,7 @@
 "use client";
 import { links } from "@/app/data";
 import useModalStore from "@/app/store/modalStore";
+import Image from "next/image";
 
 import { useState } from "react";
 //icons
@@ -11,9 +12,22 @@ import { Link } from "react-scroll";
 const MobileNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const modal = useModalStore();
+
+  if (isOpen) {
+    document.body.classList.add("overflow-y-hidden");
+  } else {
+    document.body.classList.remove("overflow-y-hidden");
+  }
   return (
     <div className="flex justify-between items-center p-8 text-2xl   h-24 ">
-      <h1 className="text-primary">Logo</h1>
+      <Image
+        src="/logo.png"
+        className="w-16"
+        width={250}
+        height={250}
+        alt="logo"
+      />
+
       {/* icons */}
       {isOpen ? (
         <IoCloseOutline

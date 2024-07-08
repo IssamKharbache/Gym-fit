@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Link } from "react-scroll";
 import Modal from "../modal/Modal";
 import useModalStore from "@/app/store/modalStore";
+import Image from "next/image";
 
 const NavBar = () => {
   const [navColor, setNavColor] = useState(false);
@@ -30,7 +31,24 @@ const NavBar = () => {
             : "bg-black max-w-[1400px] mx-auto hidden md:flex"
         }`}
       >
-        <h1 className="text-primary">Logo</h1>
+        {navColor ? (
+          <Image
+            src="/logo2.png"
+            width={250}
+            height={250}
+            className="w-16"
+            alt="logo"
+          />
+        ) : (
+          <Image
+            src="/logo.png"
+            className="w-16"
+            width={250}
+            height={250}
+            alt="logo"
+          />
+        )}
+
         {/* dektop navbar */}
         <div className="flex gap-8">
           <Link
