@@ -2,7 +2,7 @@
 import MobileNavBar from "./MobileNavBar";
 
 import { links } from "@/app/data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import Modal from "../modal/Modal";
 import useModalStore from "@/app/store/modalStore";
@@ -13,15 +13,18 @@ const NavBar = () => {
 
   const modal = useModalStore();
 
-  const changeNavColor = () => {
-    if (window.scrollY >= 80) {
-      setNavColor(true);
-    } else {
-      setNavColor(false);
-    }
-  };
+  useEffect(() => {
+    const changeNavColor = () => {
+      if (window.scrollY >= 80) {
+        setNavColor(true);
+      } else {
+        setNavColor(false);
+      }
+    };
 
-  window.addEventListener("scroll", changeNavColor);
+    window.addEventListener("scroll", changeNavColor);
+  }, []);
+
   return (
     <>
       <nav
