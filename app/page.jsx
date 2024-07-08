@@ -11,7 +11,7 @@ export default function Home() {
       <div className="h-screen">
         <About />
       </div>
-      <div className="h-screen">
+      <div className="h-screen ">
         <Classes />
       </div>
     </main>

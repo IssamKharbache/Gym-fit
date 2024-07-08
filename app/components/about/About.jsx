@@ -27,7 +27,7 @@ const variants = {
 };
 const About = () => {
   const ref = useRef();
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { margin: "-300px" });
   return (
     <motion.div
       animate={isInView && "show"}
@@ -67,7 +67,7 @@ const About = () => {
             alt="whoarewe"
             className="w-full lg:w-[50%]  object-cover"
           />
-          <p className="text-gray-400 text-xl  md:text-4xl mb-6">
+          <p className="text-gray-400 text-xl  lg:text-4xl mb-6">
             Welcome to Fit Gym, where your fitness journey begins! At Fit Gym,
             we provide state-of-the-art equipment, a variety of group classes,
             and personalized training to help you achieve your fitness goals.

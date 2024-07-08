@@ -1,28 +1,10 @@
 "use client";
+import { links } from "@/app/data";
 import Link from "next/link";
 import { useState } from "react";
 //icons
 import { HiMenuAlt1 } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
-
-const links = [
-  {
-    title: "Home",
-    path: "/",
-  },
-  {
-    title: "Who we are",
-    path: "/",
-  },
-  {
-    title: "classes",
-    path: "/",
-  },
-  {
-    title: "Memberships",
-    path: "/",
-  },
-];
 
 const MobileNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,6 +32,9 @@ const MobileNavBar = () => {
             {link.title}
           </Link>
         ))}
+        <button className=" bg-black text-primary py-2 px-6 hover:rounded-2xl hover:opacity-90 duration-300 items-center text-center">
+          Become a member
+        </button>
       </div>
     </div>
   );
