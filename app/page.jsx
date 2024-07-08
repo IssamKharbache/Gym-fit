@@ -2,6 +2,7 @@ import About from "./components/about/About";
 import Classes from "./components/classes/Classes";
 import Hero from "./components/hero/Hero";
 import InfoBanner from "./components/infobanner/InfoBanner";
+import MemberShip from "./components/memberships/MemberShip";
 
 export default function Home() {
   return (
@@ -15,7 +16,12 @@ export default function Home() {
       <div className="">
         <Classes />
       </div>
-      <InfoBanner />
+      <div className="h-screen lg:h-[45vh] mt-24">
+        <InfoBanner />
+      </div>
+      <div className="h-screen mb-12">
+        <MemberShip />
+      </div>
     </main>
   );
 }
