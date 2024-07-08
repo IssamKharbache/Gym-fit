@@ -29,7 +29,7 @@ const variants = {
 
 const Classes = () => {
   const ref = useRef();
-  const isInView = useInView(ref, { margin: "0px 600px -50px 0px" });
+  const isInView = useInView(ref, { margin: "0px 600px -50px 600px" });
   return (
     <motion.div
       animate={isInView && "show"}

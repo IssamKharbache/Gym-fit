@@ -19,7 +19,7 @@ export default function Home() {
       <div className="h-screen lg:h-[45vh] mt-24">
         <InfoBanner />
       </div>
-      <div className="h-screen mb-12">
+      <div className=" mb-12">
         <MemberShip />
       </div>
     </main>
