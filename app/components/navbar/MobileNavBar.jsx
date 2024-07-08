@@ -3,7 +3,7 @@ import { links } from "@/app/data";
 import useModalStore from "@/app/store/modalStore";
 import Image from "next/image";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 //icons
 import { HiMenuAlt1 } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
@@ -13,11 +13,13 @@ const MobileNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const modal = useModalStore();
 
-  if (isOpen) {
-    document.body.classList.add("overflow-y-hidden");
-  } else {
-    document.body.classList.remove("overflow-y-hidden");
-  }
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("overflow-y-hidden");
+    } else {
+      document.body.classList.remove("overflow-y-hidden");
+    }
+  }, [isOpen]);
   return (
     <div className="flex justify-between items-center p-8 text-2xl   h-24 ">
       <Image
