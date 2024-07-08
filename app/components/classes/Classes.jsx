@@ -46,7 +46,7 @@ const Classes = () => {
           variants={variants}
           initial="hidden"
           animate="show"
-          className="text-[60px] xl:text-[200px] text-gray-200 opacity-10 text-center"
+          className="text-[50px] xl:text-[200px] text-gray-200 opacity-10 text-center"
         >
           Featured classes
         </motion.h1>
@@ -55,14 +55,14 @@ const Classes = () => {
             variants={variants}
             initial="fromRight"
             animate="show"
-            className="text-primary text-center text-5xl xl:text-8xl"
+            className="text-primary text-center text-4xl xl:text-8xl"
           >
             Classes
           </motion.h1>
         </div>
       </div>
       {/*  */}
-      <motion.div className="grid grid-cols-1 xl:grid-cols-2  gap-12 mb-6">
+      <motion.div className="grid grid-cols-1 xl:grid-cols-2   gap-12 mb-6">
         {classes.map((item, idx) => (
           <motion.div
             custom={idx}
@@ -74,11 +74,11 @@ const Classes = () => {
               background: `url(${item.img})`,
               backgroundRepeat: "no-repeat",
             }}
-            className="flex flex-col justify-end h-[400px] w-[350px] px-4 md:px-0  md:w-[600px] relative"
+            className="flex flex-col justify-end h-[400px] w-[300px] px-4 md:px-0  md:w-[600px] relative"
           >
             <div className="absolute top-0 right-0 bottom-0 left-0 bg-[rgba(0,0,0,0.6)] opacity-70"></div>
             <div className="py-4 px-6 flex flex-col gap-4  relative">
-              <h1 className="text-5xl text-white font-semibold  ">
+              <h1 className="text-3xl md:text-5xl text-white font-semibold  ">
                 {item.title}
               </h1>
               <button

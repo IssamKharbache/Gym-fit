@@ -42,7 +42,7 @@ const About = () => {
             variants={variants}
             initial="hidden"
             animate="show"
-            className="text-[80px] lg:text-[200px] text-gray-200 opacity-40"
+            className="text-[50px] lg:text-[200px] text-gray-200 opacity-40"
           >
             Who we are
           </motion.h1>
@@ -51,7 +51,7 @@ const About = () => {
               variants={variants}
               initial="fromRight"
               animate="show"
-              className="text-primary text-center text-5xl lg:text-8xl"
+              className="text-primary text-center text-3xl lg:text-8xl"
             >
               Who we are
             </motion.h1>
