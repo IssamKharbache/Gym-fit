@@ -19,20 +19,16 @@ export const classes = [
 
 export const links = [
   {
-    title: "Home",
-    path: "/",
-  },
-  {
     title: "Who we are",
-    path: "/",
+    path: "about",
   },
   {
     title: "classes",
-    path: "/",
+    path: "classes",
   },
   {
     title: "Memberships",
-    path: "/",
+    path: "memberships",
   },
 ];
 

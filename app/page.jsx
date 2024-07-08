@@ -7,19 +7,19 @@ import MemberShip from "./components/memberships/MemberShip";
 export default function Home() {
   return (
     <main className="max-w-[1200px] mx-auto mt-24 ">
-      <div className="h-screen">
+      <div className="h-screen" id="/">
         <Hero />
       </div>
-      <div className="h-screen">
+      <div className="h-screen" id="about">
         <About />
       </div>
-      <div className="">
+      <div id="classes">
         <Classes />
       </div>
       <div className="h-screen lg:h-[45vh] mt-24">
         <InfoBanner />
       </div>
-      <div className=" mb-12">
+      <div className="mb-12" id="memberships">
         <MemberShip />
       </div>
     </main>

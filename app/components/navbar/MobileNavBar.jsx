@@ -9,7 +9,8 @@ import { IoCloseOutline } from "react-icons/io5";
 const MobileNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="">
+    <div className="flex justify-between items-center p-8 text-2xl   h-24 ">
+      <h1 className="text-primary">Logo</h1>
       {/* icons */}
       {isOpen ? (
         <IoCloseOutline
@@ -23,8 +24,8 @@ const MobileNavBar = () => {
         />
       )}
       <div
-        className={`absolute right-0 top-24  flex flex-col items-center justify-center gap-16 bg-primary w-full h-full duration-700 ${
-          isOpen ? "block" : "hidden"
+        className={`absolute z-10 top-24 flex flex-col items-center justify-center gap-16 bg-primary w-full h-full duration-700 ${
+          isOpen ? "right-0" : "right-[100%]"
         }`}
       >
         {links.map((link, idx) => (
