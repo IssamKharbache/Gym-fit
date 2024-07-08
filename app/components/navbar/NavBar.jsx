@@ -1,9 +1,7 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
 import MobileNavBar from "./MobileNavBar";
-import { IoCloseOutline } from "react-icons/io5";
-import { HiMenuAlt1 } from "react-icons/hi";
+
 import { links } from "@/app/data";
 
 const NavBar = () => {
@@ -15,7 +13,7 @@ const NavBar = () => {
         {links.map((link, idx) => (
           <Link
             key={idx}
-            className="hover:scale-110 duration-300 text-primary"
+            className="hover:scale-110 duration-300 text-primary uppercase"
             href={link.path}
           >
             {link.title}

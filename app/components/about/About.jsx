@@ -27,7 +27,7 @@ const variants = {
 };
 const About = () => {
   const ref = useRef();
-  const isInView = useInView(ref, { margin: "-300px" });
+  const isInView = useInView(ref, { margin: "0px 100px -50px 0px" });
   return (
     <motion.div
       animate={isInView && "show"}
