@@ -1,5 +1,6 @@
 "use client";
 import { classes } from "@/app/data";
+import useModalStore from "@/app/store/modalStore";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 
@@ -30,6 +31,7 @@ const variants = {
 const Classes = () => {
   const ref = useRef();
   const isInView = useInView(ref, { margin: "0px 600px -50px 600px" });
+  const modal = useModalStore();
   return (
     <motion.div
       animate={isInView && "show"}
@@ -79,7 +81,10 @@ const Classes = () => {
               <h1 className="text-5xl text-white font-semibold  ">
                 {item.title}
               </h1>
-              <button className="bg-primary p-4 text-xl font-bold hover:bg-primary-hover hover:rounded-2xl duration-300">
+              <button
+                onClick={modal.open}
+                className="bg-primary p-4 text-xl font-bold hover:bg-primary-hover hover:rounded-2xl duration-300"
+              >
                 Book now
               </button>
             </div>

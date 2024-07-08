@@ -1,13 +1,16 @@
 "use client";
 import { links } from "@/app/data";
-import Link from "next/link";
+import useModalStore from "@/app/store/modalStore";
+
 import { useState } from "react";
 //icons
 import { HiMenuAlt1 } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
+import { Link } from "react-scroll";
 
 const MobileNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const modal = useModalStore();
   return (
     <div className="flex justify-between items-center p-8 text-2xl   h-24 ">
       <h1 className="text-primary">Logo</h1>
@@ -29,11 +32,28 @@ const MobileNavBar = () => {
         }`}
       >
         {links.map((link, idx) => (
-          <Link key={idx} className="text-black text-3xl" href={link.path}>
+          <Link
+            key={idx}
+            onClick={() => setIsOpen(false)}
+            className="text-black text-3xl"
+            spy={true}
+            smooth={true}
+            hashSpy={true}
+            offset={-50}
+            duration={500}
+            isDynamic={true}
+            to={link.path}
+          >
             {link.title}
           </Link>
         ))}
-        <button className=" bg-black text-primary py-2 px-6 hover:rounded-2xl hover:opacity-90 duration-300 items-center text-center">
+        <button
+          onClick={() => {
+            setIsOpen(false);
+            modal.open();
+          }}
+          className=" bg-black text-primary py-2 px-6 hover:rounded-2xl hover:opacity-90 duration-300 items-center text-center"
+        >
           Become a member
         </button>
       </div>

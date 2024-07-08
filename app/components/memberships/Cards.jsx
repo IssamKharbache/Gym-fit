@@ -1,7 +1,7 @@
 import { memberships } from "@/app/data";
 import React from "react";
 
-const Cards = () => {
+const Cards = ({ modal }) => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-full gap-6">
       {memberships.map((membership, idx) => {
@@ -44,6 +44,7 @@ const Cards = () => {
             </div>
             <div className="flex  items-center justify-center">
               <button
+                onClick={modal.open}
                 type="button"
                 className=" bg-primary hover:bg-primary-hover px-8 py-4 text-2xl duration-300 "
               >

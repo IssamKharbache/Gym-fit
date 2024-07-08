@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 import Cards from "./Cards";
+import useModalStore from "@/app/store/modalStore";
 
 const variants = {
   show: {
@@ -30,6 +31,7 @@ const variants = {
 const MemberShip = () => {
   const ref = useRef();
   const isInView = useInView(ref, { margin: "0px 600px -50px 600px" });
+  const modal = useModalStore();
   return (
     <motion.div
       animate={isInView && "show"}
@@ -62,7 +64,7 @@ const MemberShip = () => {
         </div>
         {/*  */}
       </div>
-      <Cards />
+      <Cards modal={modal} />
     </motion.div>
   );
 };

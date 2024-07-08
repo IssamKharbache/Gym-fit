@@ -3,6 +3,9 @@ import Classes from "./components/classes/Classes";
 import Hero from "./components/hero/Hero";
 import InfoBanner from "./components/infobanner/InfoBanner";
 import MemberShip from "./components/memberships/MemberShip";
+import MemberModal from "./components/modal/MemberModal";
+import Modal from "./components/modal/Modal";
+import useModalStore from "./store/modalStore";
 
 export default function Home() {
   return (
@@ -22,6 +25,7 @@ export default function Home() {
       <div className="mb-12" id="memberships">
         <MemberShip />
       </div>
+      <MemberModal />
     </main>
   );
 }

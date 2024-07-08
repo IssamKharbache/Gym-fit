@@ -4,9 +4,14 @@ import MobileNavBar from "./MobileNavBar";
 import { links } from "@/app/data";
 import { useState } from "react";
 import { Link } from "react-scroll";
+import Modal from "../modal/Modal";
+import useModalStore from "@/app/store/modalStore";
 
 const NavBar = () => {
   const [navColor, setNavColor] = useState(false);
+
+  const modal = useModalStore();
+
   const changeNavColor = () => {
     if (window.scrollY >= 80) {
       setNavColor(true);
@@ -62,6 +67,7 @@ const NavBar = () => {
         </div>
 
         <button
+          onClick={modal.open}
           className={`hidden md:block ${
             navColor ? "bg-black text-primary" : "bg-primary text-black"
           }   py-2 px-6 hover:rounded-2xl hover:opacity-90 duration-300 items-center text-center`}
