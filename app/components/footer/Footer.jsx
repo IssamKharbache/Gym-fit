@@ -21,13 +21,13 @@ const Footer = () => {
       {/* input */}
       <div className="flex flex-col gap-4">
         <h1 className="uppercase text-4xl">Subscribe to our news letter</h1>
-        <div className="flex">
+        <div className="flex flex-col lg:flex-row">
           <input
             type="text"
             placeholder="contact@gmail.com"
             className="p-4 text-2xl border-black"
           />
-          <button className="uppercase bg-black hover:bg-black/90 duration-200 text-white px-8">
+          <button className="uppercase bg-black hover:bg-black/90 duration-200 text-white px-8 py-4 lg:py-0">
             Submit
           </button>
         </div>
